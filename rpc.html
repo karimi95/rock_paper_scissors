@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Rock Paper Scissors</title>
+  </head>
+
+  <script>
+    let compChoice, playerChoice, holderComp, holderPlayer;
+
+    function computerPlay(){
+
+    let num = Math.floor(Math.random() * 10);
+    console.log(num);
+    if(num >= 0 && num <= 2){
+			  compChoice = "Rock";
+			  }
+	  if(num >= 3 && num <= 5){
+			  compChoice = "Paper";
+      }
+    if(num >= 6 && num <= 8){
+					compChoice = "Scissors";
+										}
+		 if(num >= 9){
+					computerPlay();
+                  }
+			return compChoice;
+    }
+
+
+	  function game(playerChoice){
+
+      computerPlay();
+
+//console.log(playerChoice);
+//console.log(compChoice);
+    holderComp = compChoice.toUpperCase();
+    holderPlayer = playerChoice.toUpperCase();
+console.log(holderComp);
+console.log(holderPlayer);
+
+
+      if(holderPlayer === holderComp){
+        return "Draw!";
+      }
+      if(holderPlayer === "ROCK" && holderComp === "SCISSORS"){
+      console.log("Winner, Rock beats Scissors");
+}
+      if(holderPlayer === "PAPER" && holderComp === "ROCK"){
+        console.log("Winner, Paper beats Rock");
+      }
+      if(holderPlayer === "SCISSORS" && holderComp === "PAPER"){
+        console.log("Winner, Scissors beats Paper");
+      }
+      if(holderPlayer === "ROCK" && holderComp === "PAPER"){
+        console.log("Loser, Paper beats Rock");
+      }
+      if(holderPlayer === "PAPER" && holderComp === "SCISSORS"){
+        console.log("Loser, Scissors beats Paper");
+      }
+      if(holderPlayer === "SCISSORS" && holderComp === "ROCK"){
+        console.log("Loser, Rock beats Scissors");
+      }
+    }
+
+
+
+  </script>
+
+
+
+
+
+</html>
